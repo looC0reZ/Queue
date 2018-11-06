@@ -1,6 +1,6 @@
 /* class PostOffice.
  *
- * ver.: 0.0.1
+ * ver.: 0.0.2
  *
  * Информации об авторском параве нет
  */
@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 /** Реализация структуры данных PriorityQueue.
- * @version   0.1 27 Oct 2018
+ * @version   0.2 27 Oct 2018
  * @author    Georgiy Krasko
  */
 
@@ -53,7 +53,9 @@ class Customer {
 class AgeComparator implements Comparator<Customer> {
     @Override
     public int compare(final Customer c1, final Customer c2) {
-        if ((c1.getAge() > 60) || (c2.getAge() > 60)) {
+        if ((c1.getAge() >= 60) && (c2.getAge() >= 60)) {
+            return 0;
+        } else if ((c1.getAge() >= 60) || (c2.getAge() >= 60)) {
             if (c1.getAge() > c2.getAge()) {
                 return -1;
             } else if (c1.getAge() < c2.getAge()) {
